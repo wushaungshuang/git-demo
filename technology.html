@@ -1,0 +1,29 @@
+<div id="main" ng-controller="TechnologyController" ng-init="load()">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="ng-binding">{{name}}</h4> 
+    </div>
+        <ul class="list-group" >
+          <li class="list-group-item ng-scope" ng-repeat="tech in techs">
+            <a ng-href="#!/al/{{tech.id}}/{{tech.name}}/{{secondid}}/{{name}}">
+              <span class="ng-binding">{{tech.name}}</span>
+            </a>
+          <span class="text-info pull-right ng-binding">{{tech.timestamp}}</span>
+          </li>
+        </ul>
+        <div class="panel-footer text-center"></div>
+  </div>
+  <div style="margin-left:0px;" class="pull-right">
+     <ul class="pagination" >
+        <li ng-class="{true:'disabled'}['{{page}}'=='1']">
+                <a href="javascript:void(0);" ng-click="prev()">上一页</a>
+            </li>
+            <li ng-repeat="page in pages">
+                <a href="javascript:void(0);" ng-click="loadPage(page)" ng-init="test(page.count)">{{page.count}}</a>
+            <li>
+            <li ng-class="{true:'disabled'}['{{page}}'=='1']">
+                <a href="javascript:void(0);" ng-click="next()">下一页</a>
+            </li>
+            </ul>
+</div>
+</div>
